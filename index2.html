@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chuck Norris Jokes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1 class="my-4">Chuck Norris Jokes</h1>
+      <div class="row">
+        <!-- <li class="col-sm-4 list-group-item" v-for="(joke, index) in jokes" :key="index">{{ joke.value }}</li> -->
+
+        <div class="col-sm-4 card" style="width: 18rem;" v-for="(joke, index) in jokes" :key="index">
+          <img class="card-img-top" src="chucknorris.jpeg.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">{{ joke.value }}</p>
+          </div>
+        </div>
+      </div>
+      </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          jokes: [
+            {
+              "icon_url": "chucknorris.jpeg.jpg", 
+              "value": "Chuck Norris can skydive into outer space."
+            },
+            {
+              "icon_url": "chucknorris.jpeg.jpg", 
+              "value": "The chief export of Chuck Norris is pain."
+            },
+            {
+              "icon_url": "chucknorris.jpeg.jpg", 
+              "value": "Chuck Norris doesn't read books. He stares them down until he gets the information he wants."
+            },
+            {
+              "icon_url": "chucknorris.jpeg.jpg", 
+              "value": "Time waits for no man. Unless that man is Chuck Norris."
+            },
+            {
+              "icon_url": "chucknorris.jpeg.jpg", 
+              "value": "If you spell Chuck Norris in Scrabble, you win. Forever."
+            },
+          ]
+        }
+      })
+    </script>
+    <script>
+      Vue.component('movie-card', {
+      props: ['image', 'title'],
+      template:
+        `
+        <div>
+          <img width="100" v-bind:src="image" v-bind:alt="title"/>
+          <h2>{{ title }}</h2>
+        </div>
+        `
+    })
+    
+    var app = new Vue({
+      el: "#app",
+      data: {
+        movies: [
+          {
+          title: "Back to the future",
+          image:
+    "http://es.web.img3.acsta.net/pictures/14/04/03/13/45/034916.jpg",
+          },
+          {
+          title: "Matrix",
+          image:
+            "http://t0.gstatic.com/images?q=tbn:ANd9GcQq3pIz-aKgkmYX1dJ-EL-AlHSPcOO7wdqRIJ5gJy9qNinXpmle",
+          },
+          {
+          title: "Interstellar",
+          image:
+            "http://t1.gstatic.com/images?q=tbn:ANd9GcRf61mker2o4KH3CbVE7Zw5B1-VogMH8LfZHEaq3UdCMLxARZAB",
+          },
+        ],
+      },
+    });
+    </script>
+    </div>
+  </body>
+</html>
+
+
